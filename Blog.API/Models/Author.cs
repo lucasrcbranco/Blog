@@ -4,20 +4,20 @@ public class Author : BaseModel<Guid>
 {
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
-    public string FullName => $"{FirstName.ToName()} {LastName.ToName()}";
+    public string FullName => $"{FirstName.ToTitleCase()} {LastName.ToTitleCase()}";
 
     public Author(string firstName, string lastName)
     {
-        FirstName = firstName.ToName();
-        LastName = lastName.ToName();
+        FirstName = firstName.ToTitleCase();
+        LastName = lastName.ToTitleCase();
     }
 
     public void Update(string firstName, string lastName)
     {
         Validate(firstName, lastName);
 
-        FirstName = firstName.ToName();
-        LastName = lastName.ToName();
+        FirstName = firstName.ToTitleCase();
+        LastName = lastName.ToTitleCase();
     }
 
 

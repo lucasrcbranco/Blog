@@ -23,16 +23,6 @@ public static class StringExtensions
             return value.ToUpper();
         }
 
-        return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(value.ToLower());
-    }
-
-    /// <summary>
-    /// It trims the target value, and also applies a capitalization of only the first letter.
-    /// </summary>
-    /// <param name="value"></param>
-    /// <returns>A string trimmed and also with only its first letter capitalized.</returns>
-    public static string ToName(this string value)
-    {
-        return value.Trim().ToTitleCase();
+        return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(value.Trim().ToLower());
     }
 }
