@@ -1,4 +1,6 @@
-﻿namespace Blog.API._Utils;
+﻿using System.Globalization;
+
+namespace Blog.API._Utils;
 
 public static class StringExtensions
 {
@@ -21,7 +23,7 @@ public static class StringExtensions
             return value.ToUpper();
         }
 
-        return string.Concat(value.Remove(1).ToUpper(), value.AsSpan(1));
+        return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(value.ToLower());
     }
 
     /// <summary>

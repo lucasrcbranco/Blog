@@ -4,7 +4,7 @@ public class Author : BaseModel<Guid>
 {
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
-    public string FullName => FirstName + " " + LastName;
+    public string FullName => $"{FirstName.ToName()} {LastName.ToName()}";
 
     public Author(string firstName, string lastName)
     {
